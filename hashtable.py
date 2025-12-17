@@ -1,43 +1,45 @@
-# Create Hash Map class
-class CreateHashMap:
+
+class HashTable:
+    #initialize constructor
     def __init__(self, initial_capacity=20):
         self.list = []
         for i in range(initial_capacity):
             self.list.append([])
 
-    # Inserts a new item into the hash table
-    # Citing source: WGU code repository W-2_ChainingHashTable_zyBooks_Key-Value_CSV_Greedy.py
-    def insert(self, key, item):  # does both insert and update
-        # get the bucket list where this item will go.
+    
+    def insert(self, key, item):
+        #using built in hash function to create bucket 
         bucket = hash(key) % len(self.list)
         bucket_list = self.list[bucket]
 
-        # update key if it is already in the bucket
-        for kv in bucket_list:  # O(N) CPU time
-            # print (key_value)
+       #checking if key already exists to update its value
+        for kv in bucket_list:  
             if kv[0] == key:
                 kv[1] = item
                 return True
 
-        # if not, insert the item to the end of the bucket list
+        #If this is a new key, create a new slot for this bucket
         key_value = [key, item]
         bucket_list.append(key_value)
         return True
 
-    # Lookup items in hash table
+    #search function
     def lookup(self, key):
+        #hashing the passed in key
         bucket = hash(key) % len(self.list)
         bucket_list = self.list[bucket]
+        #comparing it with the available buckets for a match
         for pair in bucket_list:
             if key == pair[0]:
                 return pair[1]
-        return None  # no pair[0] matches key 0
+        return None  
 
-    # Hash remove method - removes item from hash table
+    #create removal function
     def hash_remove(self, key):
+        #hashing the passed in key
         slot = hash(key) % len(self.list)
         destination = self.list[slot]
 
-        # If the key is found in the hash table then remove the item
+        #comparing the hash with current buckets for a removal
         if key in destination:
             destination.remove(key)
