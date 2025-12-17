@@ -1,7 +1,9 @@
 #Package class
+import Truck
+from typing import Literal
 class Package:
     #defining needed attributes
-    def __init__(self, ID, address, city, state, zipcode, Deadline_time, weight, status):
+    def __init__(self, ID, address, city, state, zipcode, Deadline_time, weight, notes):
         self.ID = ID
         self.address = address
         self.city = city
@@ -9,17 +11,15 @@ class Package:
         self.zipcode = zipcode
         self.Deadline_time = Deadline_time
         self.weight = weight
-        self.status = status
-        self.departure_time = None
-        self.delivery_time = None
+        self.notes = notes
+        #self.status = Literal["In transit", "at hub" "En route", "delivered"] = "At hub"
+        self.status = "at hub"
+        self.departure_time = None #time the package left the hub
+        self.delivery_time = None 
+        self.arrival_time = None #time the packages arrived at the hub (the late packages)
+        self.truck_id = None #truck assigned to deliver this package
     #formatting string representation of object
     def __str__(self):
-        return f"{self.ID}{self.address}{self.city}{self.state}{self.zipcode}{self.Deadline_time}{self.weight}{self.delivery_time}{self.status}"
-    #comparing passed in time to delivered and depart times to return the appropriate status
-    def update_status(self, convert_timedelta):
-        if self.delivery_time < convert_timedelta:
-            self.status = "Delivered"
-        elif self.departure_time > convert_timedelta:
-            self.status = "En route"
-        else:
-            self.status = "At Hub"
+        return f"PACKAGE ID: {self.ID}, ADDRESS: {self.address}, CITY: {self.city}, STATE: {self.state}, ZIP: {self.zipcode}, DEADLINE TIME: {self.Deadline_time}, WEIGHT: {self.weight}, NOTES: {self.notes} DELIVERY TIME: {self.delivery_time}, STATUS: {self.status}"
+    
+   
