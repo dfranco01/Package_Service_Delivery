@@ -103,7 +103,7 @@ def print_pack_info(package):
     print("TRUCK ID: " + str(package.truck_id))
     print("=" * 50)
 
-#comparing passed in time to delivered and depart times to return the appropriate status
+#comparing query time to delivered and depart times to return the appropriate status
 def update_status(convert_timedelta, package):
 
     if package.ID == 9 and convert_timedelta >= timedelta(hours=10, minutes=20):
@@ -148,12 +148,6 @@ def execute_delivery(truck):
                 package.arrival_time = timedelta(hours=9, minutes=5)
                 package.status = "delayed"  # Package is in transit, not at hub yet
             
-            # update package address if it is package 9 and truck departs after 10:20 AM
-           # if package.ID == 9 and truck.depart_time >= timedelta(hours=10, minutes=20):
-            #    package.address = "410 S State St"
-             #   package.city = "Salt Lake City"
-              #  package.state = "UT"
-               # package.zip = "84111"
 
 
         #rearranging the truck's packages array, placing the next closest one first
