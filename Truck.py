@@ -1,7 +1,8 @@
 #Truck class
 class Truck:
     #defining all the desired attributes for our trucks
-    def __init__(self, capacity, speed, load, packages, mileage, address, depart_time):
+    def __init__(self, id, capacity, speed, load, packages, mileage, address, depart_time):
+        self.id = id
         self.capacity = capacity
         self.speed = speed
         self.load = load
