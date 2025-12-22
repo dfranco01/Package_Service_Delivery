@@ -61,11 +61,11 @@ def extract_address_number(address):
 
 
 #Manually Loading Trucks
-truck1 = Truck.Truck(1, 16, 18, None, [1, 13, 14, 15, 16, 20, 29, 30, 31, 34, 37, 40], 0.0, "4001 South 700 East",
+truck1 = Truck.Truck(1, 16, 18, None, [1, 13, 14, 15, 16, 19, 20, 29, 30, 31, 34, 37, 40], 0.0, "4001 South 700 East",
                      timedelta(hours=8))
 
 
-truck2 = Truck.Truck(2, 16, 18, None, [3, 6, 9, 17, 18, 19, 21, 22, 23, 24, 26, 27, 35, 36, 38, 39], 0.0,
+truck2 = Truck.Truck(2, 16, 18, None, [3, 6, 9, 17, 18, 21, 22, 23, 24, 26, 27, 35, 36, 38, 39], 0.0,
                      "4001 South 700 East", timedelta(hours=10, minutes=20))
 
 
