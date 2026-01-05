@@ -28,7 +28,7 @@ Python 🐍
 - Implement a GUI instead of a CLI for a more user-friendly experience
 
 ## Demo 📷
-https://github.com/dfranco01/Astro-Weight/blob/main/demo/Screen%20Recording%202026-01-04%20201918.mp4
+[Demo](https://github.com/dfranco01/Package_Service_Delivery/blob/main/demo/Recording%202026-01-05%20002330.mp4)
 
 ## Contributing 🤝
 Feel free to open issues, submit Pull Requests, or suggest improvements!
